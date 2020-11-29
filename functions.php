@@ -18,10 +18,10 @@ function gp_init() {
   add_theme_support('html5',
     array('comment-list', 'comment-form', 'search-form')
   );
-  // add_theme_support( 'woocommerce' );
-  // add_theme_support( 'wc-product-gallery-zoom' );
-  // add_theme_support( 'wc-product-gallery-lightbox' );
-  // add_theme_support( 'wc-product-gallery-slider' );
+  add_theme_support( 'woocommerce' );
+  add_theme_support( 'wc-product-gallery-zoom' );
+  add_theme_support( 'wc-product-gallery-lightbox' );
+  add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action('after_setup_theme', 'gp_init');
 
@@ -74,7 +74,7 @@ function excerpt($charNumber){
 
 
  function register_menus() {
-   // register_nav_menu('navBar',__( 'Header' ));
+   register_nav_menu('navBar', __( 'Header' ));
    // register_nav_menu('navBarMobile',__( 'Header Mobile' ));
    // register_nav_menu('contactMenu',__( 'Contact Menu' ));
    // add_post_type_support( 'page', 'excerpt' );
