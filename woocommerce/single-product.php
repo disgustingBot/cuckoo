@@ -17,27 +17,7 @@
 
     </div>
     <div class="ficha" style="border-color:<?php echo get_post_meta(get_the_ID(), 'Z_color', true); ?>;">
-<!--
-      <span class="ficha_title">Valor nutricional</span>
-      <hr>
-      <span class="ficha_text">Por 100 ml. (aprox)</span>
-      <hr>
-      <span class="ficha_text">Valor energético 51,17 kcal</span>
-      <hr>
-      <span class="ficha_text">Proteínas 0,33 g</span>
-      <hr>
-      <span class="ficha_text">Hidratos de carbono 12,21 g</span>
-      <hr>
-      <span class="ficha_text">de los cuales azúcar 10,93 g</span>
-      <hr>
-      <span class="ficha_text">Grasas 0 g de las cuales</span>
-      <hr>
-      <span class="ficha_text">&nbsp;saturadas 0 g</span>
-      <hr>
-      <span class="ficha_text">Fibra 0,5 g</span>
-      <hr>
-      <span class="ficha_text">Sodio 0,002 g</span>
-      <hr> -->
+
       <?php the_content(); ?>
 
     </div>
@@ -61,11 +41,11 @@
 
 
       <p class="prod_page_item">Precio</p>
-      <p class="prod_page_text">24,30 € - 12 botellines</p>
-      <p class="prod_page_text">45,30 € - 24 botellines</p>
+      <?php echo get_post_meta(get_the_ID(), 'G_price', true); ?>
+      
 
       <a class="prod_page_mas" href="<?php echo site_url() . '/shop'; ?>">Más formatos y sabores disponibles</a>
-      <p class="prod_page_boton_ficha" onclick="altClassFromSelector('alt', '.prod_page_caption')">Ficha técnica</p>
+      <p class="prod_page_boton_ficha" onclick="altClassFromSelector('alt', '.prod_page_caption')"><strong>+</strong> Ficha técnica</p>
     </div>
   </div>
 </section>

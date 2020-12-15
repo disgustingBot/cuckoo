@@ -5,16 +5,13 @@
 
   <div class="soy_cuckoo_caption">
     <h1 class="soy_cuckoo_title rowcol1">
-      - Soy Cuckoo.
+      <?php echo get_post_meta(get_the_ID(), 'A_title', true); ?>
     </h1>
     <h3 class="soy_cuckoo_sub_title">
-      He volado por medio mundo y he decidido sentar cabeza.
-      Aprovechando mis especiales habilidades, me dedico a mi gran pasión: la fruta.
+    <?php echo get_post_meta(get_the_ID(), 'B_sub_title', true); ?>
     </h3>
     <p class="soy_cuckoo_txt">
-      Selecciono, uno a uno, cada fruto en su punto óptimo de maduración, sin prisas, con mimo, para extraerle su mejor sabor, para que disfrutes.<br><br>
-      Trabajo de sol a sol para garantizarte la máxima calidad, sólo así puedo ofrecerte un fructus vitae con todas sus propiedades intactas; un torrente diario de placer y vitaminas.<br><br>
-      Me apasiona vivir en el campo y gozar de la riqueza y variedad de sus frutos.
+    <?php echo get_post_meta(get_the_ID(), 'C_texto', true); ?>
     </p>
   </div>
 </section>

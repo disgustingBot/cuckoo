@@ -27,35 +27,6 @@ $scrt = '6LcRuNAUAAAAALBu7Ymh0yxmTXTJmP0rsnkjGyj0';
 
   <header class="header" id="header">
 
-    <menu class="menu">
-      <div class="menu_language">
-        <a href="<?php echo site_url() . '/en'; ?>">English</a>
-        <a href="<?php echo site_url() . '/es'; ?>">Español</a>
-      </div>
-      <p class="menu_txt">
-        Premium<br>Juices & Nectars
-      </p>
-
-      <!-- <nav class="nav_menu"> -->
-        <?php
-        $args = array(
-          'theme_location' => 'navBar',
-          'depth' => 0,
-          'container'	=> false,
-          'fallback_cb' => false,
-          'menu_class' => 'navBar',
-        );
-        wp_nav_menu($args);
-        ?>
-
-      <!-- </nav> -->
-      <button class="burger" onclick="altClassFromSelector('mobile_menu_active', '#header')">
-        <div class="burgerBar"></div>
-        <div class="burgerBar"></div>
-        <div class="burgerBar"></div>
-      </button>
-    </menu>
-
     <div class="logo">
 
       <img class="logo_certif" src="<?php echo get_template_directory_uri() . '/img/certificate.png'; ?>" alt="">
@@ -65,3 +36,31 @@ $scrt = '6LcRuNAUAAAAALBu7Ymh0yxmTXTJmP0rsnkjGyj0';
     </div>
 
   </header>
+
+
+  <button class="burger" onclick="altClassFromSelector('mobile_menu_active', 'body')">
+    <div class="burgerBar"></div>
+    <div class="burgerBar"></div>
+    <div class="burgerBar"></div>
+  </button>
+  <menu class="menu">
+    <div class="menu_language">
+      <a href="<?php echo site_url() . '/en'; ?>">English</a>
+      <a href="<?php echo site_url() . '/es'; ?>">Español</a>
+    </div>
+    <p class="menu_txt">Premium<br>Juices & Nectars</p>
+
+    <!-- <nav class="nav_menu"> -->
+      <?php
+      $args = array(
+        'theme_location' => 'navBar',
+        'depth' => 0,
+        'container'	=> false,
+        'fallback_cb' => false,
+        'menu_class' => 'navBar',
+      );
+      wp_nav_menu($args);
+      ?>
+
+    <!-- </nav> -->
+  </menu>

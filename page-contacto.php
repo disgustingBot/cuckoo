@@ -4,15 +4,21 @@
 <section class="contacto">
   <div class="contacto_caption">
     <p class="contacto_title">Dudas, preguntas, consultas:</p>
-    <p class="contacto_description">(+34)93 71 30 423</p>
+    <p class="contacto_description">
+      <?php echo get_post_meta(get_the_ID(), 'A_telefono', true); ?>
+    </p>
 
     <p class="contacto_title">O envíanos un email a:</p>
-    <p class="contacto_description">hola@cuckoofruits.com</p>
+    <p class="contacto_description">
+      <?php echo get_post_meta(get_the_ID(), 'B_email', true); ?>
+    </p>
 
     <p class="contacto_title">
       Quieres tener Cuckoo Fruits en tu país? Eres importador? Distribuidor?<br>Envíanos un email a:
     </p>
-    <p class="contacto_description">distributors@cuckoofruits.com</p>
+    <p class="contacto_description">
+     <?php echo get_post_meta(get_the_ID(), 'C_email_distrib', true); ?>
+    </p>
 
   </div>
 
