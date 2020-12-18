@@ -1,15 +1,8 @@
 <?php get_header(); ?>
 
-
-<!-- colocar aqui el bloque del encabezado -->
-<h1>page.php</h1>
-
-
-<?php while(have_posts()){the_post(); ?>
-    <section class="main">
+    <main class="page_main">
         <?php the_content(); ?>
-    </section>
-<?php } ?>
+    </main>
 
 
 <?php get_footer(); ?>
