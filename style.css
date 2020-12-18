@@ -511,6 +511,10 @@ main h6 {
 
 hr {margin: 1rem 0}
 
+main a{
+  word-break: break-all;
+}
+
 main a,
 main h1,
 main h2,
