@@ -170,6 +170,8 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?product */
   --product_grid_GTC:1fr;
+  --product_img_height:calc(100vw - var(--lateral) * 2);
+
 
   /* ?prod_page */
   --prod_page_GTC:1fr;
@@ -233,6 +235,8 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?product */
     --product_grid_GTC:1fr 1fr;
+    --product_img_height:calc((100vw - 16px - var(--lateral) * 2 - .5rem) / 2);
+
 
     /* ?prod_page */
     --prod_page_caption_GTC:1fr 1fr;
@@ -308,6 +312,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?product */
     --product_grid_GTC:1fr 1fr 1fr;
+    --product_img_height:calc((100vw - 16px - var(--lateral) * 2 - 1rem - 5rem) / 3);
 
     /* ?prod_page */
     --prod_page_GTC:0.7fr 1fr;
@@ -344,6 +349,9 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?soy_cuckoo */
     /* --soy_cuckoo_GAF:column; */
+
+    /* ?product */
+    --product_img_height:calc((1000px - 16px - var(--lateral) * 2 - 1rem - 5rem) / 3);
 
 
     /* ?prod_page */
@@ -844,6 +852,10 @@ ul,ol{list-style:none}
 .product{
   display: grid;
   grid-gap:.5rem;
+}
+.product_img{
+  object-fit: contain;
+  height:var(--product_img_height)!important;
 }
 .product_caption{
   display: grid;
