@@ -43,7 +43,8 @@ Version: 0.1
 6.8) =prod_page:
 
 6.69) =redDot:
-6.99) =footer
+6.99) =footer:
+6.99.0) =footer_menu:
 
 FIN DE MAPA DE CONTENIDOS */
 
@@ -184,9 +185,12 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?contacto */
   --contacto_GTC:1fr;
+  --contacto_form_GC: unset;
+  --contacto_boton_ML: auto;
+  --contacto_GG: 3rem;
   --contacto_title_font_size:1.4rem;
   --contacto_description_font_size:1rem;
-  --contacto_img_width:50%;
+  --contacto_img_width:100%;
 
   /* ?FOOTER */
 }
@@ -240,6 +244,9 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?contacto */
     --contacto_GTC:1fr 1fr;
+    --contacto_form_GC: 2;
+    --contacto_boton_ML: 0;
+    --contacto_GG: 1rem;
     --contacto_title_font_size:1.2rem;
     --contacto_description_font_size:1rem;
     --contacto_img_width:100%;
@@ -463,6 +470,85 @@ ul,ol{list-style:none}
   flex-grow: 1;
   /* margin: var(--margin); */
 }
+
+
+/* PAGE.PHP */
+
+
+main p, main li {
+  margin-bottom: .5rem;
+  line-height: 1.65;
+  font-size: 16px;
+  text-align: var(--textAlignJustifyLeft);
+}
+
+main li {
+  padding-left: 16px;
+}
+
+main a,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  margin-bottom: 1rem;
+}
+
+hr {margin: 1rem 0}
+
+main a,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+main ol,
+main ul {list-style-type: circle}
+main ul ul {list-style-type: square;}
+
+main p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+main h1 {
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+}
+main h2 {
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+}
+main h3 {
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+main h4 {
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+}
+main h5 {
+  font-size: .83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                               6) =COMPONENTES:
@@ -553,13 +639,8 @@ ul,ol{list-style:none}
   z-index:1;
   grid-gap:.7rem;
   transition: background .3s .3s, clip-path .4s, color .5s;
-
-
-
   align-content: center;
   justify-content: center;
-
-
   clip-path: var(--nav_menu_clip_path);
 }
 
@@ -713,16 +794,10 @@ ul,ol{list-style:none}
 --------------------------------------------------------------------------- */
 .contacto{
   display:grid;
-  /* grid-template-columns:1fr 1fr; */
   grid-template-columns:var(--contacto_GTC);
-  grid-gap:1rem;
-  /* padding: calc(var(--header_height) + 30px) var(--lateral) 3rem  var(--lateral); */
-  /* padding-top: calc(var(--header_height) + 30px); */
-
+  grid-gap: var(--contacto_GG);
 }
 .contacto_caption{
-  grid-row:1/3;
-  margin:auto;
 }
 .contacto_title{
   /* font-size: .9rem; */
@@ -736,17 +811,17 @@ ul,ol{list-style:none}
   font-size:var(--contacto_description_font_size);
   font-weight: 700;
 }
-
 .contacto_img{
   padding:0 2.5rem;
   margin:auto;
   width:var(--contacto_img_width);
 }
-
 .contacto_form{
   display: grid;
   grid-gap: .5rem;
   color:black;
+  grid-column: var(--contacto_form_GC);
+  grid-row: 1/3;
 }
 ::placeholder {
   color: black;
@@ -764,10 +839,23 @@ ul,ol{list-style:none}
   font-family: 'futura';
   font-weight: 700;
   margin: auto;
-  margin-left: 0;
+  margin-left: var(--contacto_boton_ML);
   background: transparent;
 }
-
+.contacto_information, .contacto_input_container {
+  font-size: 12px;
+}
+.contacto_input_container {
+  display: flex;
+  justify-content: center;
+}
+.contacto_input_container input {
+  margin-right: 5px;
+}
+.contacto_input_container a {
+  color: blue;
+  text-decoration: underline;
+}
 
 
 /* ---------------------------------------------------------------------------
@@ -985,14 +1073,7 @@ ul,ol{list-style:none}
   /* bottom: 0; */
   width:100%;
 }
-.footer_text{
-  font-size:.7rem;
-  text-align: center;
-  /* margin:auto; */
-}
-.footer_link{
-  color:inherit;
-}
+
 
 
 
@@ -1000,27 +1081,17 @@ ul,ol{list-style:none}
   max-width:none;
 }
 
-
-
-
-
-
-
-
-
-#cookies-eu-banner {
-  left: 0;
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.99.0) =footer_menu:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.footer_menu {
+  display: flex;
+  justify-content: center;
 }
-#cookies-eu-label {
-  font-size: 16px;
-}
-#cookies-eu-reject, #cookies-eu-accept {
-  font-size: 14px;
-  padding: 5px;
-}
-#cookies-eu-accept {
-  background: #78C243;
-}
-#cookies-eu-more {
-  color: #FE1C11;
+.footer_menu .menu-item {
+  margin: 0 5px;
+  font-size:.7rem;
+  text-align: center;
 }
