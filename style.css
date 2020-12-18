@@ -195,6 +195,8 @@ FIN DE MAPA DE CONTENIDOS */
   --contacto_img_width:100%;
 
   /* ?FOOTER */
+  --footer_menu_FD: column;
+  --footer_menu_items_margin: 10px auto;
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -337,6 +339,9 @@ FIN DE MAPA DE CONTENIDOS */
     --contacto_description_font_size:.6rem;
 
     /* ?FOOTER */
+
+    --footer_menu_FD: row;
+    --footer_menu_items_margin: 0 5px;
   }
 }
 
@@ -1100,10 +1105,11 @@ main h5 {
 --------------------------------------------------------------------------- */
 .footer_menu {
   display: flex;
+  flex-direction: var(--footer_menu_FD);
   justify-content: center;
 }
 .footer_menu .menu-item {
-  margin: 0 5px;
+  margin: var(--footer_menu_items_margin);
   font-size:.7rem;
   text-align: center;
 }
