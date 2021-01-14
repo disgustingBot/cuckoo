@@ -75,6 +75,7 @@ function excerpt($charNumber){
 
  function register_menus() {
    register_nav_menu('navBar', __( 'Header' ));
+   register_nav_menu('language_bar', __( 'language_bar' ));
    register_nav_menu('footer_menu',__( 'Footer' ));
    // add_post_type_support( 'page', 'excerpt' );
  }
