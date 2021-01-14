@@ -426,9 +426,12 @@ body{
   position:relative;
   /* grid-template-columns: max-content 1fr; */
   grid-template-columns:var(--body_GTC);
+  grid-template-rows:min-content 1fr min-content;
+  align-items: center;
   margin:0 var(--lateral);
   max-width: 1000px;
   grid-gap:var(--body_gap);
+  min-height: 100vh;
 }
 img{object-fit:cover;width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
@@ -586,7 +589,7 @@ main h5 {
   position: fixed;
   top:0;
   left:0;
-  transition:.5s;
+  /* transition:.5s; */
   z-index: 10000;
 }
 .circle{
@@ -1056,6 +1059,7 @@ main h5 {
   opacity: 0;
   font-size:var(--ficha_font_size);
 }
+.ficha hr{margin:0.2rem 0}
 .ficha_title{
   font-family: 'futura';
   /* font-size: 10pt; */
@@ -1093,6 +1097,7 @@ main h5 {
   grid-column:1/-1;
   /* bottom: 0; */
   width:100%;
+  margin:.8rem 0;
 }
 
 
